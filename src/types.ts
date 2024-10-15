@@ -20,4 +20,5 @@ export interface Message {
 export interface SendMessageParams {
 	chat_id: number | string
 	text: string
+	[key: string]: any
 }
