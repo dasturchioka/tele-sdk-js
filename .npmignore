@@ -1,0 +1,24 @@
+# Ignore source files (only publish dist/ folder)
+src/
+
+# Ignore examples and tests
+examples/
+tests/
+
+# Ignore node modules
+node_modules/
+
+# Ignore TypeScript config files
+tsconfig.json
+
+# Ignore local environment files and logs
+.env
+*.log
+
+# Ignore lock files (optional, if you use them)
+package-lock.json
+yarn.lock
+
+# Ignore Git files
+.git/
+.gitignore
