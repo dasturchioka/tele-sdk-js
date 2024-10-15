@@ -1,0 +1,18 @@
+{
+  "name": "tele-sdk-js",
+  "version": "1.0.0",
+  "description": "A lightweight SDK for interacting with the Telegram Bot API.",
+  "main": "dist/bot.js",
+  "types": "dist/bot.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/telegram-bot-sdk-js.git"
+  },
+  "keywords": ["telegram", "bot", "telegram-bot", "sdk", "javascript", "telegram bot api"],
+  "author": "Sardor Aminov dasturchioka@gmail.com",
+  "license": "MIT"
+}
