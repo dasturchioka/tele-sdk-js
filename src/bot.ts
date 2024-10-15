@@ -1,5 +1,5 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios'
-import { Message, SendMessageParams } from './types'
+import { DefaultResponse, Message, SendMessageParams } from './types'
 
 /**
  * A class to interact with the Telegram Bot API.
@@ -39,7 +39,7 @@ export class TelegramBot {
 	 * @param params - The parameters for sending a message.
 	 * @returns A promise that resolves to the sent message object.
 	 */
-	async sendMessage(params: SendMessageParams): Promise<Message> {
-		return this.request<Message>('sendMessage', params)
+	async sendMessage(params: SendMessageParams): Promise<DefaultResponse> {
+		return this.request<DefaultResponse>('sendMessage', params)
 	}
 }
