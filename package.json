@@ -1,6 +1,6 @@
 {
 	"name": "tele-sdk-js",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "A lightweight SDK for interacting with the Telegram Bot API.",
 	"main": "dist/bot.js",
 	"types": "dist/bot.d.ts",
