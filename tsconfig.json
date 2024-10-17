@@ -1,15 +1,14 @@
 {
-	"compilerOptions": {
-		"target": "ES6",
-		"module": "commonjs",
-		"outDir": "./dist", // Output directory
-		"declaration": true, // Generate *.d.ts files
-		"declarationMap": true, // Optional: map declarations to source files
-		"sourceMap": true, // Optional: generate source maps
-		"strict": true,
-		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true
-	},
-	"include": ["src/**/*"], // Include your source files
+	 "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "outDir": "dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "declarationDir": "dist",  // Ensure d.ts files are output to 'dist'
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.ts"],
 	"exclude": ["node_modules", "dist"]
 }

@@ -22,3 +22,6 @@ yarn.lock
 # Ignore Git files
 .git/
 .gitignore
+
+index.html
+script.js

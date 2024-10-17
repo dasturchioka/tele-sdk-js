@@ -1,5 +1,5 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios'
-import { DefaultResponse, Message, SendMessageParams } from './types'
+import { DefaultResponse, Message, SendMessageParams, SendPhotoOptions } from './types'
 
 /**
  * A class to interact with the Telegram Bot API.
@@ -41,5 +41,44 @@ export class TelegramBot {
 	 */
 	async sendMessage(params: SendMessageParams): Promise<DefaultResponse> {
 		return this.request<DefaultResponse>('sendMessage', params)
+	}
+
+	/**
+	 * Sends a photo to a chat.
+	 * @param options Options for sending a photo.
+	 * @returns The sent message.
+	 */
+	public async sendPhoto(options: SendPhotoOptions): Promise<DefaultResponse> {
+		const formData = new FormData()
+		formData.append('chat_id', String(options.chat_id))
+		formData.append('photo', options.photo)
+
+		if (options.caption) formData.append('caption', options.caption)
+		if (options.parse_mode) formData.append('parse_mode', options.parse_mode)
+		if (options.disable_notification !== undefined) {
+			formData.append('disable_notification', String(options.disable_notification))
+		}
+		if (options.reply_to_message_id) {
+			formData.append('reply_to_message_id', String(options.reply_to_message_id))
+		}
+		if (options.protect_content) {
+			formData.append('protect_content', String(options.protect_content))
+		}
+		if (options.reply_to_message_id) {
+			formData.append('reply_to_message_id', String(options.reply_to_message_id))
+		}
+		if (options.allow_sending_without_reply) {
+			formData.append('allow_sending_without_reply', String(options.allow_sending_without_reply))
+		}
+		if (options.reply_markup) {
+			formData.append('reply_markup', JSON.stringify(options.reply_markup))
+		}
+			const response: AxiosResponse<DefaultResponse> = await this.api.post('sendPhoto', formData, {
+				headers: {
+					'Content-Type': 'multipart/form-data',
+				},
+			})
+
+		return response.data
 	}
 }
