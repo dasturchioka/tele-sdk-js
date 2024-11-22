@@ -27,6 +27,86 @@ bot.sendMessage(chatId, 'Hello, World!');
 ```
 For more examples, see the <a href="https://github.com/dasturchioka/tele-sdk-js/tree/master/examples">examples</a> directory.
 
+## Framework Examples
+
+The SDK can be used with various JavaScript frameworks. Here are some example implementations:
+
+### Vue.js 3
+```javascript
+import { TelegramBot } from 'tele-sdk-js';
+
+const bot = new TelegramBot('YOUR_BOT_TOKEN');
+
+// In your Vue component
+export default {
+  setup() {
+    const sendMessage = async () => {
+      await bot.sendMessage({
+        chat_id: 'YOUR_CHAT_ID',
+        text: 'Hello from Vue!'
+      });
+    };
+    return { sendMessage };
+  }
+}
+```
+See `examples/vue/TelegramBot.vue` for a complete chat interface implementation with:
+- Text messaging
+- Location sharing
+- File uploading
+- Modern UI with message history
+
+### React
+```typescript
+import { TelegramBot } from 'tele-sdk-js';
+
+const bot = new TelegramBot('YOUR_BOT_TOKEN');
+
+// In your React component
+const TelegramComponent: React.FC = () => {
+  const sendMessage = async () => {
+    await bot.sendMessage({
+      chat_id: 'YOUR_CHAT_ID',
+      text: 'Hello from React!'
+    });
+  };
+  return <button onClick={sendMessage}>Send Message</button>;
+};
+```
+See `examples/react/TelegramBot.tsx` for a full TypeScript implementation with:
+- Message handling
+- Location sharing
+- File uploads
+- Poll creation
+- Styled components
+
+### Node.js
+```javascript
+const { TelegramBot } = require('tele-sdk-js');
+
+const bot = new TelegramBot('YOUR_BOT_TOKEN');
+
+async function sendMessage() {
+  await bot.sendMessage({
+    chat_id: 'YOUR_CHAT_ID',
+    text: 'Hello from Node.js!'
+  });
+}
+```
+See `examples/nodejs/basic-bot.js` for a complete example with:
+- Basic message handling
+- Location sharing
+- Document sending
+- Poll creation
+
+## Security Considerations
+
+When using this SDK in web applications:
+1. Never expose your bot token in frontend code
+2. Create a backend API to handle bot operations
+3. Use environment variables for sensitive data
+4. Implement proper authentication for your bot endpoints
+
 ## Requirements
 - Node.js version 14 or higher.
 
