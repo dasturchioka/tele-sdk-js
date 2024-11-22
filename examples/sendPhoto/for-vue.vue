@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import {TelegramBot} from 'tele-sdk-js'; // Replace with actual SDK import
+import {TelegramBot} from 'tele-sdk-js';
 
 const bot = new TelegramBot('YOUR_BOT_TOKEN');
 

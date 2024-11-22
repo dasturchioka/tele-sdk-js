@@ -1,4 +1,4 @@
-const { TelegramBot } = require('your-telegram-sdk') // Replace with actual SDK import
+const { TelegramBot } = require('tele-sdk-js')
 
 const bot = new TelegramBot('YOUR_BOT_TOKEN')
 
